@@ -1,3 +1,15 @@
+Implimentation Plans for TAcademy
+As stated from our previous plans created, here is a detailed list of all things that must be implemented to the site
+1. Home Page: home page is obviously the first page that every person likely visits so it requires the "inspiration" and "pull" to attract more students
+    - Donation Button: Either have the button open a new page with the payment portal. You can attach my venmo: @tanishqb27. Zelle: 412-919-7673. I'll make sure that the money that is received(if any) will be distrubuted evenly upon us and utilized only on this website, until we have nearly perfected the site. 
+    - Welcome to Tacademy button at the top/ banner/ logo: when clicked, return back to home page.
+    - Courses: This should just be a dropdown of all courses the user is registered in. If not registered in any than a link should be attached to show all courses and the user is able to pick the classes they want to prioritize.  
+    - Purpose: Just 1 statement from Ajay and TQ about what our purpose is for the future of TAcademy
+    - Games section: This should just show an image of each game that the students could play and just a tiny description about each one. The person with the highest score on the leaderboard should also be written in the description. Make sure to add a more coming soon to it. For now just add one game description and image of car racing. 
+    -Settings Link in the navbar: Account changes for email, number, etc. Display Rank in all games and rank in leaderboard overall. This should also include an additional button to display the overall global leaderboard. Display the banner type achieved after answered certain questions. For example after a user has correctly answered 20 different questions: the banner is upgraded to turtle. 50 - Panda and then on and on. 
+
+
+---------------------------------------------------------Read Above-------------------------------------------------
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
