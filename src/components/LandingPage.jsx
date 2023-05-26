@@ -72,7 +72,13 @@ const LandingPage = () => {
       </p>
       <div className="flex justify-center">
         <button className="bg-blue-600 text-white py-2 px-4 rounded-lg mr-2 hover:bg-white hover:text-blue-600 hover:border-blue-600 border-2 border-blue-600 transition-all duration-300">Login</button>
-        <button className="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-white hover:text-blue-600 hover:border-blue-600 border-2 border-blue-600 transition-all duration-300">Register</button>
+        <button className="bg-blue-600 text-white py-2 px-4 rounded-lg mr-2 hover:bg-white hover:text-blue-600 hover:border-blue-600 border-2 border-blue-600 transition-all duration-300">Register</button>
+        <button
+  className="bg-blue-600 text-white py-2 px-4 rounded-lg mr-2 hover:bg-white hover:text-blue-600 hover:border-blue-600 border-2 border-blue-600 transition-all duration-300"
+  onClick={() => window.open('/demo-page', '_blank')}
+>
+  Play Our DEMO Game
+</button>
       </div>
     </div>
     <div className="w-1/2">
