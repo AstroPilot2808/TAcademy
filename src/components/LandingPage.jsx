@@ -5,6 +5,10 @@ import '../style.css';
 import logoImage from '../images/download.jpg';
 import headImage from '../images/images.jpg';
 import ajayImage from '../images/ajay.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faSnapchatGhost } from '@fortawesome/free-brands-svg-icons';
 
 const LandingPage = () => {
   const navigate = useNavigate();
@@ -35,6 +39,11 @@ const LandingPage = () => {
 
   const scrollToTop = () => {
     scroll.scrollToTop();
+  };
+
+  const [showForm, setShowForm] = useState(false);
+  const toggleForm = () => {
+    setShowForm(!showForm);
   };
 
   return (
@@ -134,46 +143,105 @@ const LandingPage = () => {
       </Element>
 
       <Element name="contact" className="py-16">
-  <div className="container mx-auto flex justify-center">
-    <div className="w-1/3">
-      <h1 className="text-3xl font-bold mb-6">Contact Me</h1>
-      <div>
-        <p>Email: ajayohm28@gmail.com</p>
-        <p>Phone: (412)-587-2795</p>
-        <p>Snapchat: @ajayo2005</p>
-        <a href="https://github.com/AstroPilot2808" target="_blank" rel="noopener noreferrer">
-          <p>Github: @AstroPilot2808</p>
-        </a>
-      </div>
-    </div>
-    <div className="w-1/3">
-      <form onSubmit={handleSubmit}>
-        <h1 className="text-3xl font-bold mb-6">Contact Me</h1>
-        <input type="text" name="Name" placeholder="Your Name" required className="mb-4 p-2 border border-gray-300" />
-        <input type="email" name="Email" placeholder="Your Email" required className="mb-4 p-2 border border-gray-300" />
-        <textarea name="Message" rows="6" placeholder="Your Message" className="mb-4 p-2 border border-gray-300"></textarea>
-        <button type="submit" className="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-white hover:text-blue-600 hover:border-blue-600 border-2 border-blue-600 transition-all duration-300">
-          Submit
-        </button>
-        <span id="msg">{message}</span>
-      </form>
-    </div>
-    <div className="w-1/3">
-      <h1 className="text-3xl font-bold mb-6">Contact Me</h1>
-      <div>
-        <p>Email: ajayohm28@gmail.com</p>
-        <p>Phone: (412)-587-2795</p>
-        <p>Snapchat: @ajayo2005</p>
-        <a href="https://github.com/AstroPilot2808" target="_blank" rel="noopener noreferrer">
-          <p>Github: @AstroPilot2808</p>
-        </a>
-      </div>
-    </div>
-  </div>
-  <div className="text-center mt-8">
-    <p>&copy; {new Date().getFullYear()} YourWebsite.com. All rights reserved.</p>
-  </div>
-</Element>
+        <div className="container mx-auto flex flex-col md:flex-row justify-center pl-10">
+          <div className="w-full md:w-1/3 mb-8 md:mb-0">
+            <h1 className="text-3xl font-bold mb-6">Contact Ajay</h1>
+            <div className="space-y-2">
+              <p className="text-lg">
+                <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
+                ajayohm28@gmail.com
+              </p>
+              <p className="text-lg">
+                <FontAwesomeIcon icon={faPhone} className="mr-2" />
+                (412)-587-2795
+              </p>
+              <p className="text-lg">
+                <FontAwesomeIcon icon={faSnapchatGhost} className="mr-2" />
+                @ajayo2005
+              </p>
+              <a href="https://github.com/AstroPilot2808" target="_blank" rel="noopener noreferrer">
+                <p className="text-lg pt-3">
+                  <FontAwesomeIcon icon={faGithub} className="mr-2" />
+                  @AstroPilot2808
+                </p>
+              </a>
+            </div>
+          </div>
+
+          <div className="w-full md:w-1/3 mb-8 md:mb-0">
+            {!showForm ? (
+              <button
+                onClick={toggleForm}
+                className="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-200 hover:text-blue-600 hover:border-blue-600 border-2 border-blue-600 transition-all duration-300"
+              >
+                Leave us a message :)
+              </button>
+            ) : (
+              <form onSubmit={handleSubmit} className="flex flex-col">
+                <h1 className="text-3xl font-bold mb-6">Leave us a message :)</h1>
+                <input
+                  type="text"
+                  name="Name"
+                  placeholder="Your Name"
+                  required
+                  className="mb-4 p-2 border border-gray-300 rounded-lg focus:bg-blue-200 focus:outline-none transition-all duration-300"
+                />
+                <input
+                  type="email"
+                  name="Email"
+                  placeholder="Your Email"
+                  required
+                  className="mb-4 p-2 border border-gray-300 rounded-lg focus:bg-blue-200 focus:outline-none transition-all duration-300"
+                />
+                <textarea
+                  name="Message"
+                  rows="6"
+                  placeholder="Your Message"
+                  className="mb-4 p-2 border border-gray-300 rounded-lg focus:bg-blue-200 focus:outline-none transition-all duration-300"
+                ></textarea>
+                <button
+                  type="submit"
+                  className="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-200 hover:text-blue-600 hover:border-blue-600 border-2 border-blue-600 transition-all duration-300 mt-auto"
+                >
+                  Submit
+                </button>
+                <span id="msg">{message}</span>
+              </form>
+            )}
+          </div>
+
+          <div className="w-full md:w-1/3 mb-8 md:mb-0 pl-20">
+            <h1 className="text-3xl font-bold mb-6">Contact Tanishq</h1>
+            <div className="space-y-2">
+              <p className="text-lg">
+                <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
+                tanishq.bansod@gmail.com
+              </p>
+              <p className="text-lg">
+                <FontAwesomeIcon icon={faPhone} className="mr-2" />
+                (412)-919-7673
+              </p>
+              <p className="text-lg">
+                <FontAwesomeIcon icon={faSnapchatGhost} className="mr-2" />
+                @tanishqbansod
+              </p>
+              <a href="https://github.com/Tanishq-Bansod" target="_blank" rel="noopener noreferrer">
+                <p className="text-lg pt-3">
+                  <FontAwesomeIcon icon={faGithub} className="mr-2" />
+                  @Tanishq-Bansod
+                </p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </Element>
+
+      <footer className="bg-gray-800 text-white text-center pt-4 pb-2 flex flex-col items-center">
+        <div className="flex items-center mb-2">
+          <img src={logoImage} alt="TAcademy Logo" className="h-8 mr-2" />
+          <p className="text-sm">&copy; 2023 TAcademy. All rights reserved.</p>
+        </div>
+      </footer>
 
 
     </div>
