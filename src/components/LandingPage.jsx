@@ -5,6 +5,7 @@ import '../style.css';
 import logoImage from '../images/download.jpg';
 import headImage from '../images/images.jpg';
 import ajayImage from '../images/ajay.png';
+import TQImage from '../images/TQ.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
@@ -132,10 +133,15 @@ const LandingPage = () => {
               </div>
             </div>
             <div className="w-1/2">
-              <img src={headImage} alt="Person 2" className="rounded-full h-64 mx-auto mb-4" />
+              <img src={TQImage} alt="Person 2" className="rounded-full h-64 mx-auto mb-4" />
               <h3 className="text-3xl font-bold mb-2">Tanishq Bansod</h3>
               <div className="border-4 border-black rounded-lg bg-transparent p-4 ml-5">
-                <p className="text-black italic">"Sample Description"</p>
+                <p className="text-black italic">
+                  "My name is Tanishq D Bansod. I am 16 years old just like my partner here, I also have loved coding from 
+                  my childhood. As a kid, I would always like to learn new things and I always loved the idea of making 
+                  games for people because I love gaming myself. This site combines both of these passions and brings them 
+                  to students in order to learn and have fun while doing it."
+                </p>
               </div>
             </div>
           </div>
