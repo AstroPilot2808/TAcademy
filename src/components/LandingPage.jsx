@@ -158,9 +158,9 @@ const LandingPage = () => {
               <h3 className="text-3xl font-bold mb-2">Tanishq Bansod</h3>
               <div className="border-4 border-black rounded-lg bg-transparent p-4 ml-5">
                 <p className="text-black italic">
-                  "My name is Tanishq D Bansod. I am 16 years old just like my partner here, I also have loved coding from 
-                  my childhood. As a kid, I would always like to learn new things and I always loved the idea of making 
-                  games for people because I love gaming myself. This site combines both of these passions and brings them 
+                  "My name is Tanishq D Bansod. I am 16 years old just like my partner here, I also have loved coding from
+                  my childhood. As a kid, I would always like to learn new things and I always loved the idea of making
+                  games for people because I love gaming myself. This site combines both of these passions and brings them
                   to students in order to learn and have fun while doing it."
                 </p>
               </div>

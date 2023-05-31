@@ -6,6 +6,7 @@ import DemoGame from './components/DemoGame';
 import Login from './components/Login'
 import Dashboard from './components/Dashboard'
 import Register from './components/Register'
+import NotFound from './components/NotFound'
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/register" element={<Register />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
   );
