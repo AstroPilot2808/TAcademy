@@ -15,8 +15,12 @@ const LandingPage = () => {
   const navigate = useNavigate();
   const [message, setMessage] = useState('');
 
-  const handleButtonClick = () => {
+  const demoButtonClick = () => {
     navigate('/demo-game');
+  };
+
+  const loginButtonClick = () => {
+    navigate('/login');
   };
 
   const handleSubmit = async (e) => {
@@ -64,6 +68,14 @@ const LandingPage = () => {
                 Home
               </Link>
             </li>
+            <li className="pt-2">
+              <Link
+                onClick={loginButtonClick}
+                className="text-gray-800 cursor-pointer text-lg hover-underline-animation"
+              >
+                Login
+              </Link>
+            </li>
             <li className="pt-2 pl-2">
               <Link
                 to="about"
@@ -97,7 +109,7 @@ const LandingPage = () => {
               students of all levels. With interactive games, we make learning fun for all ages!
             </p>
             <div className="flex justify-center">
-              <button className="bg-blue-600 text-white py-2 px-4 rounded-lg mr-2 hover:bg-white hover:text-blue-600 hover:border-blue-600 border-2 border-blue-600 transition-all duration-300">
+              <button onClick={loginButtonClick} className="bg-blue-600 text-white py-2 px-4 rounded-lg mr-2 hover:bg-white hover:text-blue-600 hover:border-blue-600 border-2 border-blue-600 transition-all duration-300">
                 Login
               </button>
               <button className="bg-blue-600 text-white py-2 px-4 rounded-lg mr-2 hover:bg-white hover:text-blue-600 hover:border-blue-600 border-2 border-blue-600 transition-all duration-300">
@@ -105,7 +117,7 @@ const LandingPage = () => {
               </button>
               <button
                 className="bg-blue-600 text-white py-2 px-4 rounded-lg mr-2 hover:bg-white hover:text-blue-600 hover:border-blue-600 border-2 border-blue-600 transition-all duration-300"
-                onClick={handleButtonClick}
+                onClick={demoButtonClick}
               >
                 Play Our DEMO Game
               </button>
@@ -229,12 +241,12 @@ const LandingPage = () => {
               </p>
               <p className="text-lg">
                 <FontAwesomeIcon icon={faSnapchatGhost} className="mr-2" />
-                @tanishqbansod
+                @tanishqbansod12
               </p>
-              <a href="https://github.com/Tanishq-Bansod" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/T1G3RR" target="_blank" rel="noopener noreferrer">
                 <p className="text-lg pt-3">
                   <FontAwesomeIcon icon={faGithub} className="mr-2" />
-                  @Tanishq-Bansod
+                  @T1G3RR
                 </p>
               </a>
             </div>
