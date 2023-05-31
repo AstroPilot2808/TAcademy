@@ -64,7 +64,7 @@ const LandingPage = () => {
     <div className="min-h-screen bg-gradient-to-b from-blue-300 via-blue-400 to-blue-500">
       <header>
         <nav className="container mx-auto py-4 flex items-center justify-between">
-          <img onClick={homeClick} src={logoImage} alt="Display TAcademy Logo" className="h-20" />
+          <img onClick={homeClick} src={logoImage} alt="Display TAcademy Logo" className="h-20 shadow-2xl" />
           <ul className="flex justify-end space-x-8">
             <li className="pt-2">
               <Link
@@ -132,7 +132,7 @@ const LandingPage = () => {
               </button>
             </div>
           </div>
-          <div className="w-1/2">
+          <div className="w-1/2 shadow-2xl">
             <img src={headImage} alt="Image" className="w-full" />
           </div>
         </div>
@@ -143,7 +143,7 @@ const LandingPage = () => {
           <h2 className="text-5xl font-bold text-blue-800 mb-8">About Us</h2>
           <div className="flex justify-center">
             <div className="w-1/2">
-              <img src={ajayImage} alt="Person 1" className="rounded-full h-64 mx-auto mb-4" />
+              <img src={ajayImage} alt="Person 1" className="rounded-full h-64 mx-auto mb-4 shadow-2xl" />
               <h3 className="text-3xl font-bold mb-2">Ajay Ohm Nathan</h3>
               <div className="border-4 border-black rounded-lg bg-transparent p-4 mb-8 mr-5">
                 <p className="text-black italic">
@@ -154,7 +154,7 @@ const LandingPage = () => {
               </div>
             </div>
             <div className="w-1/2">
-              <img src={TQImage} alt="Person 2" className="rounded-full h-64 mx-auto mb-4" />
+              <img src={TQImage} alt="Person 2" className="rounded-full h-64 mx-auto mb-4 shadow-2xl" />
               <h3 className="text-3xl font-bold mb-2">Tanishq Bansod</h3>
               <div className="border-4 border-black rounded-lg bg-transparent p-4 ml-5">
                 <p className="text-black italic">
