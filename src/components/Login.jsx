@@ -3,6 +3,7 @@ import { Link } from 'react-scroll';
 import { useNavigate } from 'react-router-dom';
 import '../style.css';
 import logoImage from '../images/download.jpg';
+import { register } from 'react-scroll/modules/mixins/scroller';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -16,6 +17,10 @@ const Login = () => {
     navigate('/login');
   };
 
+  const registerButtonClick = () => {
+    navigate('/register')
+  }
+
   const homeClick = () =>{
     navigate('/')
   }
@@ -24,7 +29,7 @@ const Login = () => {
     <div className="min-h-screen bg-gradient-to-b from-blue-300 via-blue-400 to-blue-500">
       <header>
         <nav className="container mx-auto py-4 flex items-center justify-between">
-          <img src={logoImage} alt="Display TAcademy Logo" className="h-20" />
+          <img onClick={homeClick} src={logoImage} alt="Display TAcademy Logo" className="h-20" />
           <ul className="flex justify-end space-x-8">
             <li className="pt-2">
               <Link
@@ -103,8 +108,9 @@ const Login = () => {
           <p className="text-lg mt-4 text-center">
             Don't have an account?{' '}
             <Link
+                onClick={registerButtonClick}
               to="register"
-              className="text-blue-600 cursor-pointer hover-underline-animation"
+              className="text-black cursor-pointer hover-underline-animation"
               smooth={true}
               duration={500}
             >
@@ -116,7 +122,7 @@ const Login = () => {
 
       <footer className="bg-gray-800 text-white text-center pt-4 pb-2 flex flex-col items-center">
         <div className="flex items-center mb-2">
-          <img src={logoImage} alt="TAcademy Logo" className="h-8 mr-2" />
+          <img onClick={homeClick} src={logoImage} alt="TAcademy Logo" className="h-8 mr-2" />
           <p className="text-sm">&copy; 2023 TAcademy. All rights reserved.</p>
         </div>
       </footer>
