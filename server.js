@@ -28,8 +28,11 @@ const corsOptions = {
     origin: 'http://localhost:3000', // Allow requests from this origin
 };
 
-// Enable CORS for the '/register' route using the configured options
-app.post('/register', cors(corsOptions), (req, res) => {
+// Enable CORS for all routes using the configured options
+app.use(cors(corsOptions));
+
+// Define the registration endpoint
+app.post('/register', (req, res) => {
     const { firstName, lastName, dateOfBirth, username, password } = req.body;
 
     // Perform any necessary validation on the server-side
