@@ -1,9 +1,3 @@
-import zlib from 'browserify-zlib';
-import querystring from 'querystring-es3';
-import path from 'path-browserify';
-import crypto from 'crypto-browserify';
-
-
 import './App.css';
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
