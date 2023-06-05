@@ -3,6 +3,7 @@ import { Link } from 'react-scroll';
 import { useNavigate } from 'react-router-dom';
 import '../style.css';
 import logoImage from '../images/download.jpg';
+import axios from 'axios'; // Import axios for making HTTP requests
 
 const Register = () => {
     const navigate = useNavigate();
@@ -54,9 +55,26 @@ const Register = () => {
         }
 
         // Perform registration logic here
-        // ...
+        // Create an object with the user data
+        const userData = {
+            firstName,
+            lastName,
+            dateOfBirth,
+            username,
+            password,
+        };
 
-        // If all validations pass, proceed with registration
+        // Make an HTTP POST request to your server-side API endpoint
+        axios.post('http://localhost:5000/register', userData)
+            .then(response => {
+                // Handle the response from the server
+                // For example, show a success message or redirect to the dashboard
+                navigate('/dashboard');
+            })
+            .catch(error => {
+                // Handle any errors that occurred during the request
+                console.log(error);
+            });
         // ...
         // Redirect to the dashboard or perform any other actions
     };
