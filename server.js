@@ -6,6 +6,8 @@ const cors = require('cors');
 const app = express();
 
 // Enable CORS
+//This is required because Cross-Origin Resource Sharing must be manually configured for the Node server to allow cross-origin requests. 
+//By default this is block in web browsers for security reasons. ihav
 app.use(cors())
 
 // Configure Express to parse JSON data
