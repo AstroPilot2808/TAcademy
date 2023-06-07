@@ -3,7 +3,6 @@ import { Link } from 'react-scroll';
 import { useNavigate } from 'react-router-dom';
 import '../style.css';
 import logoImage from '../images/download.jpg';
-import { register } from 'react-scroll/modules/mixins/scroller';
 
 const Login = () => {
     const navigate = useNavigate();

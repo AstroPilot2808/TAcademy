@@ -133,7 +133,7 @@ const LandingPage = () => {
             </div>
           </div>
           <div className="w-1/2 shadow-2xl">
-            <img src={headImage} alt="Image" className="w-full" />
+            <img src={headImage} alt="" className="w-full" />
           </div>
         </div>
       </Element>

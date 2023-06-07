@@ -7,10 +7,6 @@ const NotFound = () => {
         navigate('/login');
     };
 
-    const registerButtonClick = () => {
-        navigate('/register');
-    };
-
     const homeClick = () => {
         navigate('/');
     };
