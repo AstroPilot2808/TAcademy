@@ -54,7 +54,6 @@ const Register = () => {
             return;
         }
 
-        // Perform registration logic here
         // Create an object with the user data
         const userData = {
             firstName,
@@ -64,20 +63,28 @@ const Register = () => {
             password,
         };
 
-        // Make an HTTP POST request to your server-side API endpoint
-        axios.post('http://localhost:5000/register', userData)
-            .then(response => {
-                // Handle the response from the server
-                // For example, show a success message or redirect to the dashboard
-                navigate('/dashboard');
+        // Make an HTTP POST request to your serverless function endpoint
+        fetch('/.netlify/functions/register', {
+            method: 'POST',
+            body: JSON.stringify(userData),
+        })
+            .then((response) => {
+                if (response.ok) {
+                    // Handle the success response
+                    // For example, show a success message or redirect to the dashboard
+                    navigate('/dashboard');
+                } else {
+                    // Handle the error response
+                    // For example, display an error message
+                    throw new Error('Registration failed');
+                }
             })
-            .catch(error => {
+            .catch((error) => {
                 // Handle any errors that occurred during the request
                 console.log(error);
             });
-        // ...
-        // Redirect to the dashboard or perform any other actions
     };
+
 
     const loginButtonClick = () => {
         navigate('/login');
