@@ -16,7 +16,7 @@ const NotFound = () => {
     return (
         <div className="flex flex-col min-h-screen bg-gradient-to-b from-blue-300 via-blue-400 to-blue-500">
             <header>
-                <nav className="container mx-auto py-4 flex items-center justify-between">
+                <nav className="container mx-auto py-4 flex items-center justify-between px-10">
                     <img onClick={homeClick} src={logoImage} alt="Display TAcademy Logo" className="h-20 shadow-2xl" />
                     <ul className="flex justify-end space-x-8">
                         <li className="pt-2">
