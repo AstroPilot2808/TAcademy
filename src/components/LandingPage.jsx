@@ -63,7 +63,7 @@ const LandingPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-300 via-blue-400 to-blue-500">
       <header>
-        <nav className="container mx-auto py-4 flex items-center justify-between">
+        <nav className="container mx-auto py-4 flex items-center justify-between px-10">
           <img onClick={homeClick} src={logoImage} alt="Display TAcademy Logo" className="h-20 shadow-2xl" />
           <ul className="flex justify-end space-x-8">
             <li className="pt-2">
@@ -110,7 +110,7 @@ const LandingPage = () => {
       </header>
 
       <Element name="home" className="py-16">
-        <div className="container mx-auto flex items-center">
+        <div className="container mx-auto flex items-center px-10">
           <div className="w-1/2 pr-8">
             <h1 className="text-4xl font-bold text-blue-600 text-left">Welcome to TAcademy</h1>
             <p className="mt-4 mb-8 text-blue-800 text-left">
@@ -137,6 +137,7 @@ const LandingPage = () => {
           </div>
         </div>
       </Element>
+
 
       <Element name="about" className="py-16">
         <div className="container mx-auto text-center overflow-hidden px-8">
@@ -276,5 +277,3 @@ const LandingPage = () => {
 };
 
 export default LandingPage;
-
-// Dont forget to add shadows to the images :)
