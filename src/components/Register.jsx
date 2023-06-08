@@ -88,7 +88,7 @@ const Register = () => {
             })
             .catch((error) => {
                 // Handle any errors that occurred during the request
-                console.log(error);
+                console.log(error.message);
             });
     };
 
