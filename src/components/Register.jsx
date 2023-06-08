@@ -10,6 +10,7 @@ const Register = () => {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [dateOfBirth, setDateOfBirth] = useState('');
+    const [email, setEmail] = useState('')
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [reenterPassword, setReenterPassword] = useState('');
@@ -29,6 +30,12 @@ const Register = () => {
 
         if (!dateOfBirth) {
             validationErrors.dateOfBirth = 'Please fill this out';
+        }
+
+        if (!email) {
+            validationErrors.email = 'Please fill this out';
+        } else if (!/\S+@\S+\.\S+/.test(email)) {
+            validationErrors.email = 'Invalid email format';
         }
 
         if (!username) {
@@ -58,6 +65,7 @@ const Register = () => {
             firstName,
             lastName,
             dateOfBirth,
+            email,
             username,
             password,
         };
@@ -193,6 +201,21 @@ const Register = () => {
                                 <p className="text-red-500 text-xs mt-1">{errors.dateOfBirth}</p>
                             )}
                         </div>
+                        <div className="mb-4">
+                            <label htmlFor="email" className="block mb-2 text-lg text-gray-800">
+                                Email
+                            </label>
+                            <input
+                                type="email"
+                                id="email"
+                                className={`w-full p-2 border rounded-lg focus:bg-blue-200 focus:outline-none transition-all duration-300 ${errors.email ? 'border-red-500' : 'border-gray-300'
+                                    }`}
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                            />
+                            {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
+                        </div>
+
                         <div className="mb-4">
                             <label htmlFor="username" className="block mb-2 text-lg text-gray-800">
                                 Create Username

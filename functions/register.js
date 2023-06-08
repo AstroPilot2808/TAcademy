@@ -11,7 +11,7 @@ const pool = mysql.createPool({
 
 exports.handler = async (event) => {
     // Parse the request body from the event
-    const { firstName, lastName, dateOfBirth, username, password } = JSON.parse(event.body);
+    const { firstName, lastName, dateOfBirth, email, username, password } = JSON.parse(event.body);
 
     try {
         // Get a connection from the pool
@@ -26,8 +26,8 @@ exports.handler = async (event) => {
         });
 
         // Insert the user registration data into the MySQL database
-        const query = `INSERT INTO TAcademy_User_Info (first_name, last_name, date_of_birth, username, password) VALUES (?, ?, ?, ?, ?)`;
-        const values = [firstName, lastName, dateOfBirth, username, password];
+        const query = `INSERT INTO TAcademy_User_Info (first_name, last_name, date_of_birth, email, username, password) VALUES (?, ?, ?, ?, ?)`;
+        const values = [firstName, lastName, dateOfBirth, email, username, password];
 
         await new Promise((resolve, reject) => {
             connection.query(query, values, (error, results) => {
