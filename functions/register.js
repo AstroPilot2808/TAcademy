@@ -26,7 +26,7 @@ exports.handler = async (event) => {
         });
 
         // Insert the user registration data into the MySQL database
-        const query = `INSERT INTO TAcademy_User_Info (first_name, last_name, date_of_birth, username, password, email) VALUES (?, ?, ?, ?, ?)`;
+        const query = `INSERT INTO TAcademy_User_Info (first_name, last_name, date_of_birth, username, password, email) VALUES (?, ?, ?, ?, ?, ?)`;
         const values = [firstName, lastName, dateOfBirth, username, password, email];
 
         await new Promise((resolve, reject) => {
