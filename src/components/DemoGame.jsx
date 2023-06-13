@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from 'react';
 import dawg from '../images/dog.jpg';
 import cat from '../images/cat.jpg';
 import CountDown from './Countdown';
-import { ReactDOM } from 'react';
 
 const DemoGame = () => {
   const [count, setCount] = useState(0);
@@ -35,9 +34,9 @@ const DemoGame = () => {
         className="rounded-full w-60 h-60 float-right"
         onClick={clickCounter}
       />
-      
-      
-      <CountDown/>
+
+
+      <CountDown />
 
     </>
   );
