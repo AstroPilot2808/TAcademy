@@ -1,43 +1,44 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import dawg from '../images/dog.jpg';
 import cat from '../images/cat.jpg';
-import CountDown from './Countdown';
 
 const DemoGame = () => {
-  const [count, setCount] = useState(0);
-  const outputRef = useRef(null);
-
-  const clickCounter = () => {
-    setCount(count + 1);
-  };
+  const [count, setCount] = useState(5);
 
   useEffect(() => {
-    if (outputRef.current) {
-      outputRef.current.innerText = count;
+    if (count > 0) {
+      const timer = setInterval(() => {
+        setCount((prevCount) => prevCount - 1);
+      }, 1000);
+
+      return () => clearInterval(timer);
     }
   }, [count]);
 
+  const showImages = count <= 0; // Determine if the images should be shown
+
   return (
     <>
-      {/* eslint-disable-next-line jsx-a11y/heading-has-content */}
-      <h1 ref={outputRef} className="text-center text-6xl"></h1>
+      {count > 0 && (
+        <h1 className="text-center text-6xl">{count}</h1>
+      )}
 
-      <img
-        src={dawg}
-        alt="Oops a problem"
-        className="rounded-full w-60 h-60 float-left"
-        onClick={clickCounter}
-      />
-      <img
-        src={cat}
-        alt="Oops a problem"
-        className="rounded-full w-60 h-60 float-right"
-        onClick={clickCounter}
-      />
-
-
-      <CountDown />
-
+      {showImages && (
+        <>
+          <img
+            src={dawg}
+            alt="Oops a problem"
+            className="rounded-full w-60 h-60 float-left"
+            onClick={() => setCount(5)}
+          />
+          <img
+            src={cat}
+            alt="Oops a problem"
+            className="rounded-full w-60 h-60 float-right"
+            onClick={() => setCount(5)}
+          />
+        </>
+      )}
     </>
   );
 };
