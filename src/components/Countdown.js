@@ -27,6 +27,7 @@ export default class CountDown extends React.Component {
     }
 
     render() {
-        return <>{this.state.count}</>;
+        const { count } = this.state;
+        return <>{count > 0 && count}</>;
     }
 }
