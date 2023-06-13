@@ -3,7 +3,6 @@ import { Link } from 'react-scroll';
 import { useNavigate } from 'react-router-dom';
 import '../style.css';
 import logoImage from '../images/download.jpg';
-import axios from 'axios'; // Import axios for making HTTP requests
 
 const Register = () => {
     const navigate = useNavigate();
@@ -11,6 +10,7 @@ const Register = () => {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [dateOfBirth, setDateOfBirth] = useState('');
+    const [email, setEmail] = useState('')
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [reenterPassword, setReenterPassword] = useState('');
@@ -30,6 +30,12 @@ const Register = () => {
 
         if (!dateOfBirth) {
             validationErrors.dateOfBirth = 'Please fill this out';
+        }
+
+        if (!email) {
+            validationErrors.email = 'Please fill this out';
+        } else if (!/\S+@\S+\.\S+/.test(email)) {
+            validationErrors.email = 'Invalid email format';
         }
 
         if (!username) {
@@ -54,30 +60,38 @@ const Register = () => {
             return;
         }
 
-        // Perform registration logic here
         // Create an object with the user data
         const userData = {
             firstName,
             lastName,
             dateOfBirth,
+            email,
             username,
             password,
         };
 
-        // Make an HTTP POST request to your server-side API endpoint
-        axios.post('http://localhost:5000/register', userData)
-            .then(response => {
-                // Handle the response from the server
-                // For example, show a success message or redirect to the dashboard
-                navigate('/dashboard');
+        // Make an HTTP POST request to your serverless function endpoint
+        fetch('/.netlify/functions/register', {
+            method: 'POST',
+            body: JSON.stringify(userData),
+        })
+            .then((response) => {
+                if (response.ok) {
+                    // Handle the success response
+                    // For example, show a success message or redirect to the dashboard
+                    navigate('/dashboard');
+                } else {
+                    // Handle the error response
+                    // For example, display an error message
+                    throw new Error('Registration failed');
+                }
             })
-            .catch(error => {
+            .catch((error) => {
                 // Handle any errors that occurred during the request
-                console.log(error);
+                console.log(error.message);
             });
-        // ...
-        // Redirect to the dashboard or perform any other actions
     };
+
 
     const loginButtonClick = () => {
         navigate('/login');
@@ -90,7 +104,7 @@ const Register = () => {
     return (
         <div className="min-h-screen bg-gradient-to-b from-blue-300 via-blue-400 to-blue-500">
             <header>
-                <nav className="container mx-auto py-4 flex items-center justify-between">
+                <nav className="container mx-auto py-4 flex items-center justify-between px-10">
                     <img onClick={homeClick} src={logoImage} alt="Display TAcademy Logo" className="h-20 shadow-2xl" />
                     <ul className="flex justify-end space-x-8">
                         <li className="pt-2">
@@ -187,6 +201,21 @@ const Register = () => {
                                 <p className="text-red-500 text-xs mt-1">{errors.dateOfBirth}</p>
                             )}
                         </div>
+                        <div className="mb-4">
+                            <label htmlFor="email" className="block mb-2 text-lg text-gray-800">
+                                Email
+                            </label>
+                            <input
+                                type="email"
+                                id="email"
+                                className={`w-full p-2 border rounded-lg focus:bg-blue-200 focus:outline-none transition-all duration-300 ${errors.email ? 'border-red-500' : 'border-gray-300'
+                                    }`}
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                            />
+                            {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
+                        </div>
+
                         <div className="mb-4">
                             <label htmlFor="username" className="block mb-2 text-lg text-gray-800">
                                 Create Username

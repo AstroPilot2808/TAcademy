@@ -20,13 +20,7 @@ const DemoGame = () => {
 
   return (
     <>
-      <div>
-        <marquee behavior="scroll" direction="left" scrollamount="15">
-          <h1 style={{ color: 'red', fontWeight: 'bold', fontSize: '2rem' }}>
-            Game in Progress
-          </h1>
-        </marquee>
-      </div>
+      {/* eslint-disable-next-line jsx-a11y/heading-has-content */}
       <h1 ref={outputRef} className="text-center text-6xl"></h1>
 
       <img
