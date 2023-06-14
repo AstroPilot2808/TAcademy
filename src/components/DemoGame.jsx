@@ -125,7 +125,7 @@ const DemoGame = () => {
   };
 
   useEffect(() => {
-    if (counter === 1) {
+    if (counter === 51) {
       clearInterval(stopwatchRef.current);
       setImages([]);
       setIsGameFinished(true);
