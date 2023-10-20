@@ -1,5 +1,8 @@
 Implimentation Plans for TAcademy
 As stated from our previous plans created, here is a detailed list of all things that must be implemented to the site
+
+Check it out: https://tacademy.netlify.app
+
 1. Home Page: home page is obviously the first page that every person likely visits so it requires the "inspiration" and "pull" to attract more students
     - Donation Button: Either have the button open a new page with the payment portal. You can attach my venmo: @tanishqb27. Zelle: 412-919-7673. I'll make sure that the money that is received(if any) will be distrubuted evenly upon us and utilized only on this website, until we have nearly perfected the site. 
     - Welcome to Tacademy button at the top/ banner/ logo: when clicked, return back to home page.
